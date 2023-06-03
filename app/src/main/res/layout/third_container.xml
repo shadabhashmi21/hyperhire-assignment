@@ -75,7 +75,7 @@
         android:paddingBottom="25dp"/>
 
     <TextView
-        android:layout_marginLeft="5sp"
+        android:layout_marginStart="5sp"
         android:id="@+id/favorite_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,13 +87,13 @@
         android:id="@+id/chat_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
+        android:layout_marginStart="10sp"
         app:layout_constraintTop_toBottomOf="@id/comment"
         app:layout_constraintStart_toEndOf="@id/favorite_count"
         android:src="@drawable/outline_chat_bubble_outline_24"/>
 
     <TextView
-        android:layout_marginLeft="5sp"
+        android:layout_marginStart="5sp"
         android:id="@+id/comment_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
