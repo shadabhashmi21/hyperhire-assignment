@@ -1,10 +1,12 @@
-package com.example.hyperhireassignment;
+package com.example.hyperhireassignment.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.hyperhireassignment.R;
+
+public class PostActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
