@@ -1,7 +1,7 @@
 package com.example.hyperhireassignment.model;
 
 public class UserModel {
-    final String profileImage;
+    final int profileImageResource;
     final String userName;
     final boolean isVerified;
     final String status;
@@ -9,8 +9,8 @@ public class UserModel {
     final String weight;
     final boolean isFollowed;
 
-    public UserModel(String profileImage, String userName, boolean isVerified, String status, String height, String weight, boolean isFollowed) {
-        this.profileImage = profileImage;
+    public UserModel(int profileImageResource, String userName, boolean isVerified, String status, String height, String weight, boolean isFollowed) {
+        this.profileImageResource = profileImageResource;
         this.userName = userName;
         this.isVerified = isVerified;
         this.status = status;
