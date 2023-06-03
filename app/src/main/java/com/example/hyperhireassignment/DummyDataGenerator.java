@@ -10,7 +10,7 @@ import java.util.List;
 public class DummyDataGenerator {
 
 
-    PostModel generatePost() {
+    public PostModel generatePost() {
         UserModel userModel;
         CommentModel commentModel;
 
