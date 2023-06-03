@@ -9,11 +9,11 @@ public class PostModel {
     final String imageLink;
     final int likesCount;
     final boolean isBookMarked;
-    final int timeStamp;
+    final long timeStamp;
     final List<CommentModel> comments;
     final UserModel userModel;
 
-    public PostModel(String postTitle, String postDescription, List<String> hashtags, String imageLink, int likesCount, boolean isBookMarked, int timeStamp, List<CommentModel> comments, UserModel userModel) {
+    public PostModel(String postTitle, String postDescription, List<String> hashtags, String imageLink, int likesCount, boolean isBookMarked, long timeStamp, List<CommentModel> comments, UserModel userModel) {
         this.postTitle = postTitle;
         this.postDescription = postDescription;
         this.hashtags = hashtags;
