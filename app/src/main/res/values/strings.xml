@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hyperhire Assignment</string>
+    <string name="appbar_header">자유톡</string>
 </resources>
