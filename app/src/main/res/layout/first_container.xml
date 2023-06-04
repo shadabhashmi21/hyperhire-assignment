@@ -11,7 +11,7 @@
         android:id="@+id/profile_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@mipmap/profile_image"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,12 +27,12 @@
         android:textSize="14sp"/>
 
     <TextView
+        android:id="@+id/measurements"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/profile_title"
         app:layout_constraintStart_toEndOf="@id/profile_image"
         android:textSize="12sp"
-        android:text="165cm  53kg"
         android:textFontWeight="400"/>
 
     <ImageView
@@ -45,12 +45,12 @@
         android:layout_height="25dp"/>
 
     <TextView
+        android:id="@+id/status"
         android:paddingTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/verified_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="1일전"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:layout_marginEnd="5dp"
@@ -64,48 +64,40 @@
         android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/post_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
-        android:text="지난 월요일에 했던 이벤트 중 가장 괜찮은 상품 뭐야?"
         android:textFontWeight="700"
         android:textSize="14sp"/>
 
     <TextView
-        android:id="@+id/subtitle"
+        android:id="@+id/post_description"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        android:text="지난 월요일에 2023년 S/S 트렌드 알아보기 이벤트 참석했던 팝들아~
-            혹시 어떤 상품이 제일 괜찮았어?
-
-후기 올라오는거 보면 로우라이즈? 그게 제일 반응 좋고 그 테이블이
-제일 재밌었다던데 맞아???
-
-올해 로우라이즈가 트렌드라길래 나도 도전해보고 싶은데 말라깽이가
-아닌 사람들도 잘 어울릴지 너무너무 궁금해ㅜㅜ로우라이즈 테이블에
-있었던 팝들 있으면 어땠는지 후기 좀 공유해주라~~!"
+        app:layout_constraintTop_toBottomOf="@id/post_title"
         android:textFontWeight="500"
         android:textSize="12sp"/>
 
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtitle">
+        app:layout_constraintTop_toBottomOf="@id/post_description">
+        <!--android:theme="@style/Theme.MaterialComponents.Light">-->
 
-        <com.google.android.material.chip.Chip
+       <!-- <com.google.android.material.chip.Chip
             android:id="@+id/chip1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
             android:text="Demo Chip"
-            android:theme="@style/Theme.MaterialComponents.Light" />
+             />-->
 
     </com.google.android.material.chip.ChipGroup>
 
