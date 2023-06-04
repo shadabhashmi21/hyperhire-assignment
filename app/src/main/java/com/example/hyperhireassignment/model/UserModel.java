@@ -8,8 +8,9 @@ public class UserModel {
     public final String height;
     public final String weight;
     public final boolean isFollowed;
+    public final String comment;
 
-    public UserModel(int profileImageResource, String userName, boolean isVerified, String status, String height, String weight, boolean isFollowed) {
+    public UserModel(int profileImageResource, String userName, boolean isVerified, String status, String height, String weight, boolean isFollowed, String comment) {
         this.profileImageResource = profileImageResource;
         this.userName = userName;
         this.isVerified = isVerified;
@@ -17,5 +18,6 @@ public class UserModel {
         this.height = height;
         this.weight = weight;
         this.isFollowed = isFollowed;
+        this.comment = comment;
     }
 }
