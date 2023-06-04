@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/first_container"
+    android:id="@+id/user_container"
     android:paddingHorizontal="12dp"
     android:paddingVertical="15dp">
 
