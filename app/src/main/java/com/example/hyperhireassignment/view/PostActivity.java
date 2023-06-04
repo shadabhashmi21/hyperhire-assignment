@@ -1,13 +1,10 @@
 package com.example.hyperhireassignment.view;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageView;
@@ -19,8 +16,8 @@ import com.example.hyperhireassignment.Status;
 import com.example.hyperhireassignment.model.PostModel;
 import com.example.hyperhireassignment.viewmodel.PostViewModel;
 import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.chip.ChipGroup;
+import com.squareup.picasso.Picasso;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -55,6 +52,7 @@ public class PostActivity extends AppCompatActivity {
         TextView userStatus = findViewById(R.id.reply_user_status);
         TextView userComment = findViewById(R.id.user_comment);
         TextView userLikesCount = findViewById(R.id.user_likes_count);
+        ImageView postImage = findViewById(R.id.post_image);
 
 
         final Observer<Resource<PostModel>> postModelObserver = new Observer<Resource<PostModel>>() {
@@ -86,6 +84,8 @@ public class PostActivity extends AppCompatActivity {
                     userStatus.setText(postModelResource.data.comments.get(0).userModel.status);
                     userComment.setText(postModelResource.data.comments.get(0).userModel.comment);
                     userLikesCount.setText(String.valueOf(postModelResource.data.comments.size()));
+
+                    Picasso.get().load(postModelResource.data.postImageLink).into(postImage);
                 }
             }
         };
