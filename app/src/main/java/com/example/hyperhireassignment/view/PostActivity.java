@@ -7,8 +7,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hyperhireassignment.R;
@@ -16,6 +18,9 @@ import com.example.hyperhireassignment.Resource;
 import com.example.hyperhireassignment.Status;
 import com.example.hyperhireassignment.model.PostModel;
 import com.example.hyperhireassignment.viewmodel.PostViewModel;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipDrawable;
+import com.google.android.material.chip.ChipGroup;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -29,14 +34,34 @@ public class PostActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.arrow_back);
 
         PostViewModel viewModel = new ViewModelProvider(this).get(PostViewModel.class);
-        TextView profileTitle = findViewById(R.id.profile_title);
+        ImageView profileImage = findViewById(R.id.profile_image);
+        TextView userName = findViewById(R.id.profile_title);
+        TextView measurements = findViewById(R.id.measurements);
+        TextView status = findViewById(R.id.status);
+        TextView postTitle = findViewById(R.id.post_title);
+        TextView postDesc = findViewById(R.id.post_description);
+        ChipGroup hashtagChips = findViewById(R.id.chip_group);
+        //Chip chip = new Chip(this);
+        //ChipDrawable drawable = ChipDrawable.createFromAttributes(this, null, 0, com.google.android.material.R.style.Theme_MaterialComponents_Light);
+        //chip.setChipDrawable(drawable);
+        //TextView likesCount = findViewById(R.id.)
 
-        // Create the observer which updates the UI.
+
         final Observer<Resource<PostModel>> postModelObserver = new Observer<Resource<PostModel>>() {
             @Override
             public void onChanged(Resource<PostModel> postModelResource) {
-                if (postModelResource.status == Status.SUCCESS){
-                    profileTitle.setText(postModelResource.data.postTitle);
+                if (postModelResource.status == Status.SUCCESS) {
+                    profileImage.setImageResource(R.mipmap.profile_image);
+                    userName.setText(postModelResource.data.userModel.status);
+                    measurements.setText(String.format("%s %s", postModelResource.data.userModel.height, postModelResource.data.userModel.height));
+                    status.setText(postModelResource.data.userModel.status);
+                    postTitle.setText(postModelResource.data.postTitle);
+                    postDesc.setText(postModelResource.data.postDescription);
+
+                    /*postModelResource.data.hashtags.forEach(s -> {
+                        chip.setText(s);
+                        hashtagChips.addView(chip);
+                    });*/
                 }
             }
         };
