@@ -15,7 +15,9 @@ public class DummyDataGenerator {
         CommentModel commentModel;
 
         userModel = new UserModel(R.mipmap.profile_image, "안녕 나 응애", true, "1일전", "165cm", "53kg", true);
-        commentModel = new CommentModel(userModel, true, 5, 1685818293);
+
+        UserModel commentUserModel = new UserModel(R.mipmap.secondary_profile_image, "ㅇㅅㅇ", false, "1일전", null, null, false);
+        commentModel = new CommentModel(commentUserModel, true, 5, 1685818293);
 
         List<CommentModel> comments = new ArrayList<>();
         comments.set(0, commentModel);
