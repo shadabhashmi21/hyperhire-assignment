@@ -1,9 +1,9 @@
 package com.example.hyperhireassignment;
 
 public class Resource<ResultType> {
-    Status status;
-    ResultType data;
-    String errorMessage;
+    public Status status;
+    public ResultType data;
+    public String errorMessage;
 
     public Resource(Status status, ResultType data, String errorMessage){
         this.status = status;
