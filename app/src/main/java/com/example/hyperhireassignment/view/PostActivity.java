@@ -63,7 +63,7 @@ public class PostActivity extends AppCompatActivity {
                         chip.setText(s);
                         hashtagChips.addView(chip);
                     });*/
-                    likesCount.setText(String.format("%d", postModelResource.data.likesCount));
+                    likesCount.setText(String.valueOf(postModelResource.data.likesCount));
                     commentCount.setText(String.valueOf(postModelResource.data.comments.size()));
                 }
             }
