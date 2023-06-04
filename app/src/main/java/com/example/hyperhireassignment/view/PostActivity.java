@@ -24,16 +24,17 @@ import com.google.android.material.chip.ChipGroup;
 
 public class PostActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PostViewModel viewModel = new ViewModelProvider(this).get(PostViewModel.class);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.arrow_back);
 
-        PostViewModel viewModel = new ViewModelProvider(this).get(PostViewModel.class);
         ImageView profileImage = findViewById(R.id.profile_image);
         TextView userName = findViewById(R.id.profile_title);
         TextView measurements = findViewById(R.id.measurements);
@@ -41,9 +42,6 @@ public class PostActivity extends AppCompatActivity {
         TextView postTitle = findViewById(R.id.post_title);
         TextView postDesc = findViewById(R.id.post_description);
         ChipGroup hashtagChips = findViewById(R.id.chip_group);
-        //Chip chip = new Chip(this);
-        //ChipDrawable drawable = ChipDrawable.createFromAttributes(this, null, 0, com.google.android.material.R.style.Theme_MaterialComponents_Light);
-        //chip.setChipDrawable(drawable);
         TextView likesCount = findViewById(R.id.likes_count);
         TextView commentCount = findViewById(R.id.comment_count);
         ImageView commentProfileImage = findViewById(R.id.comment_profile_image);
@@ -70,10 +68,11 @@ public class PostActivity extends AppCompatActivity {
                     postTitle.setText(postModelResource.data.postTitle);
                     postDesc.setText(postModelResource.data.postDescription);
 
-                    /*postModelResource.data.hashtags.forEach(s -> {
+                    postModelResource.data.hashtags.forEach(s -> {
+                        Chip chip = new Chip(PostActivity.this);
                         chip.setText(s);
                         hashtagChips.addView(chip);
-                    });*/
+                    });
                     likesCount.setText(String.valueOf(postModelResource.data.likesCount));
                     commentCount.setText(String.valueOf(postModelResource.data.comments.size()));
                     commentProfileImage.setImageResource(R.mipmap.profile_image);
