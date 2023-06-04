@@ -44,7 +44,8 @@ public class PostActivity extends AppCompatActivity {
         //Chip chip = new Chip(this);
         //ChipDrawable drawable = ChipDrawable.createFromAttributes(this, null, 0, com.google.android.material.R.style.Theme_MaterialComponents_Light);
         //chip.setChipDrawable(drawable);
-        //TextView likesCount = findViewById(R.id.)
+        TextView likesCount = findViewById(R.id.likes_count);
+        TextView commentCount = findViewById(R.id.comment_count);
 
 
         final Observer<Resource<PostModel>> postModelObserver = new Observer<Resource<PostModel>>() {
@@ -62,6 +63,8 @@ public class PostActivity extends AppCompatActivity {
                         chip.setText(s);
                         hashtagChips.addView(chip);
                     });*/
+                    likesCount.setText(String.format("%d", postModelResource.data.likesCount));
+                    commentCount.setText(String.valueOf(postModelResource.data.comments.size()));
                 }
             }
         };
