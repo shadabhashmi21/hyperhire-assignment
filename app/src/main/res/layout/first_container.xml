@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="안녕 나 응애 "
+        android:text="Demo"
         android:textFontWeight="700"
         android:textSize="14sp"/>
 

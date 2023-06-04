@@ -3,15 +3,15 @@ package com.example.hyperhireassignment.model;
 import java.util.List;
 
 public class PostModel {
-    final String postTitle;
-    final String postDescription;
-    final List<String> hashtags;
-    final String imageLink;
-    final int likesCount;
-    final boolean isBookMarked;
-    final long timeStamp;
-    final List<CommentModel> comments;
-    final UserModel userModel;
+    public final String postTitle;
+    public final String postDescription;
+    public final List<String> hashtags;
+    public final String imageLink;
+    public final int likesCount;
+    public final boolean isBookMarked;
+    public final long timeStamp;
+    public final List<CommentModel> comments;
+    public final UserModel userModel;
 
     public PostModel(String postTitle, String postDescription, List<String> hashtags, String imageLink, int likesCount, boolean isBookMarked, long timeStamp, List<CommentModel> comments, UserModel userModel) {
         this.postTitle = postTitle;
